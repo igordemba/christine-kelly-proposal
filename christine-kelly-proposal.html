@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christine & Kelly — A Proposal by Igor Demba Photography</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ivory:#F7F4EE;--ivory-deep:#EDE8DC;--parchment:#E0D9C8;
+    --ink:#1C1C1A;--ink-soft:#2E2C28;--warm-gray:#6B6760;--taupe:#9C9488;
+    --accent:#8C7355;--accent-lt:#B09878;
+    --border:rgba(140,115,85,0.2);--border-soft:rgba(28,28,26,0.09);--white:#FDFCFA;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;}
+  .hero{height:100vh;min-height:700px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--ink);}
+  .hero-bg{position:absolute;inset:0;background-image:url('https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/fbb4022f-1fe9-4093-a7f4-42fc1c9e3a2c/S%26A-19.jpg?format=2500w');background-size:cover;background-position:center 30%;opacity:0.7;transform:scale(1.04);transition:transform 10s ease;}
+  .hero:hover .hero-bg{transform:scale(1.0);}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(170deg,rgba(28,28,26,0.25) 0%,rgba(28,28,26,0.1) 30%,rgba(28,28,26,0.72) 75%,rgba(28,28,26,0.92) 100%);}
+  .hero-content{position:relative;z-index:2;padding:0 24px;display:flex;flex-direction:column;align-items:center;}
+  .hero-intro{font-size:9px;font-weight:600;letter-spacing:0.48em;text-transform:uppercase;color:rgba(176,152,120,0.85);margin-bottom:20px;opacity:0;animation:fadeUp .8s ease forwards .2s;}
+  .hero-names{font-family:'Cormorant Garamond',serif;font-size:clamp(64px,14vw,148px);font-weight:300;letter-spacing:0.06em;color:var(--ivory);line-height:0.9;margin-bottom:10px;opacity:0;animation:fadeUp 1.1s ease forwards .35s;}
+  .hero-ampersand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(36px,6vw,72px);font-weight:300;color:var(--accent-lt);line-height:1;display:block;margin-bottom:8px;opacity:0;animation:fadeUp 1s ease forwards .5s;}
+  .hero-ornament{display:flex;align-items:center;gap:18px;justify-content:center;margin:28px 0 24px;opacity:0;animation:fadeUp .8s ease forwards .7s;}
+  .orn-line{width:64px;height:1px;background:rgba(176,152,120,0.45);}
+  .orn-diamond{width:5px;height:5px;background:var(--accent-lt);transform:rotate(45deg);flex-shrink:0;}
+  .hero-venue{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,2.5vw,24px);font-weight:300;color:rgba(247,244,238,0.78);letter-spacing:0.06em;margin-bottom:8px;opacity:0;animation:fadeUp .9s ease forwards .85s;}
+  .hero-meta{font-size:9px;font-weight:500;letter-spacing:0.38em;text-transform:uppercase;color:rgba(247,244,238,0.38);opacity:0;animation:fadeUp .8s ease forwards 1s;}
+  .hero-byline{margin-top:44px;font-size:8px;font-weight:600;letter-spacing:0.42em;text-transform:uppercase;color:rgba(176,152,120,0.5);opacity:0;animation:fadeUp .8s ease forwards 1.15s;}
+  .opening{background:var(--ivory-deep);border-bottom:1px solid var(--border-soft);padding:80px 24px;text-align:center;}
+  .opening-inner{max-width:680px;margin:0 auto;}
+  .opening-label{font-size:9px;font-weight:600;letter-spacing:0.44em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;display:block;}
+  .opening-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.8vw,27px);font-weight:300;line-height:1.65;color:var(--ink-soft);letter-spacing:0.02em;}
+  .opening-sign{margin-top:28px;font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:var(--taupe);}
+  .container{max-width:1040px;margin:0 auto;padding:0 40px;}
+  .section{padding:96px 0;}
+  .section-label{font-size:9px;font-weight:600;letter-spacing:0.44em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block;}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,50px);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:28px;letter-spacing:0.02em;}
+  .section-title em{font-style:italic;color:var(--accent);}
+  .body-text{font-size:13.5px;font-weight:300;line-height:1.95;color:var(--warm-gray);letter-spacing:0.02em;}
+  .rule{border:none;border-top:1px solid var(--border-soft);}
+  .split{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;}
+  .split.rev{direction:rtl;}.split.rev>*{direction:ltr;}
+  .split-img{overflow:hidden;min-height:500px;background:var(--parchment);position:relative;}
+  .split-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 7s ease;}
+  .split-img:hover img{transform:scale(1.04);}
+  .split-text{background:var(--ivory);padding:80px 60px;display:flex;flex-direction:column;justify-content:center;}
+  .vision-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-soft);border:1px solid var(--border-soft);margin-top:52px;}
+  .vision-card{background:var(--white);padding:38px 28px;transition:background .25s;}
+  .vision-card:hover{background:var(--ivory);}
+  .vision-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--parchment);line-height:1;margin-bottom:14px;}
+  .vision-title{font-size:9px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink);margin-bottom:11px;}
+  .vision-desc{font-size:12.5px;font-weight:300;line-height:1.85;color:var(--warm-gray);}
+  .gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);height:400px;}
+  .gal-item{overflow:hidden;position:relative;background:var(--parchment);}
+  .gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 5s ease;}
+  .gal-item:hover img{transform:scale(1.06);}
+  .timeline{margin-top:52px;border-left:1px solid var(--border);}
+  .tl-day{padding:44px 0 44px 52px;border-bottom:1px solid var(--border-soft);position:relative;display:grid;grid-template-columns:180px 1fr;gap:40px;align-items:start;}
+  .tl-day::before{content:'';position:absolute;left:-5px;top:52px;width:9px;height:9px;border-radius:50%;background:var(--white);border:1px solid var(--accent);}
+  .tl-day-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;font-weight:300;color:var(--accent);line-height:1.2;}
+  .tl-day-sub{font-size:9px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--taupe);margin-top:4px;}
+  .tl-items{display:flex;flex-direction:column;gap:14px;}
+  .tl-item-title{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--ink);margin-bottom:5px;}
+  .tl-item-desc{font-size:13px;font-weight:300;line-height:1.8;color:var(--warm-gray);}
+  .tl-item{padding-bottom:14px;border-bottom:1px solid var(--border-soft);}
+  .tl-item:last-child{border-bottom:none;padding-bottom:0;}
+  .packages-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px;}
+  .pkg{border:1px solid var(--border-soft);background:var(--white);position:relative;transition:border-color .25s;display:flex;flex-direction:column;}
+  .pkg:hover{border-color:var(--border);}
+  .pkg.featured{border-color:var(--accent);background:var(--ink);}
+  .pkg-head{padding:44px 40px 32px;border-bottom:1px solid var(--border-soft);}
+  .pkg.featured .pkg-head{border-bottom-color:rgba(140,115,85,0.2);}
+  .pkg-badge{display:inline-block;font-size:8px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;background:var(--accent);color:var(--ivory);padding:5px 14px;margin-bottom:20px;}
+  .pkg-name{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);margin-bottom:6px;}
+  .pkg.featured .pkg-name{color:var(--ivory);}
+  .pkg-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;font-weight:300;color:var(--warm-gray);margin-bottom:24px;}
+  .pkg.featured .pkg-tagline{color:rgba(247,244,238,0.55);}
+  .pkg-price{font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:300;line-height:1;color:var(--accent);}
+  .pkg.featured .pkg-price{color:rgba(232,224,207,0.9);}
+  .pkg-price sup{font-size:24px;vertical-align:super;}
+  .pkg-price-note{font-size:10px;font-weight:300;color:var(--taupe);letter-spacing:0.06em;margin-top:6px;}
+  .pkg.featured .pkg-price-note{color:rgba(156,148,136,0.6);}
+  .pkg-body{padding:36px 40px;flex:1;display:flex;flex-direction:column;}
+  .pkg-section-title{font-size:8.5px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+  .pkg.featured .pkg-section-title{color:var(--accent-lt);}
+  .pkg-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+  .pkg-features li{font-size:12.5px;font-weight:400;letter-spacing:0.04em;color:var(--warm-gray);padding-left:18px;position:relative;line-height:1.5;}
+  .pkg.featured .pkg-features li{color:rgba(247,244,238,0.58);}
+  .pkg-features li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:1px;background:var(--accent);}
+  .inv-table{width:100%;border-collapse:collapse;margin-top:44px;}
+  .inv-table tr{border-bottom:1px solid var(--border-soft);}
+  .inv-table td{padding:18px 0;font-size:13px;color:var(--warm-gray);font-weight:300;letter-spacing:0.04em;}
+  .inv-table td:last-child{text-align:right;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);}
+  .inv-total td{border-bottom:none;border-top:1px solid var(--accent);padding-top:24px;color:var(--ink)!important;font-size:12px!important;font-weight:600!important;letter-spacing:0.12em;text-transform:uppercase;}
+  .inv-total td:last-child{font-size:40px!important;color:var(--accent)!important;}
+  .process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border-soft);margin-top:52px;}
+  .proc-step{padding:36px 26px;border-right:1px solid var(--border-soft);position:relative;}
+  .proc-step:last-child{border-right:none;}
+  .proc-step::before{content:'';position:absolute;top:0;left:26px;right:26px;height:2px;background:var(--accent);}
+  .proc-num{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--parchment);line-height:1;margin-bottom:16px;}
+  .proc-title{font-size:9px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink);margin-bottom:9px;}
+  .proc-desc{font-size:12px;font-weight:300;line-height:1.8;color:var(--warm-gray);}
+  .quote-band{background:var(--ink);padding:80px 24px;text-align:center;}
+  .qb-mark{font-family:'Cormorant Garamond',serif;font-size:72px;line-height:.5;color:rgba(140,115,85,0.3);display:block;margin-bottom:32px;}
+  .qb-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.8vw,28px);font-weight:300;color:rgba(247,244,238,0.82);line-height:1.65;max-width:680px;margin:0 auto 24px;letter-spacing:0.02em;}
+  .qb-attr{font-size:9px;font-weight:600;letter-spacing:0.38em;text-transform:uppercase;color:var(--accent-lt);}
+  .cta-section{position:relative;overflow:hidden;min-height:560px;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px;}
+  .cta-bg{position:absolute;inset:0;background-image:url('https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/44725302-606e-4261-98db-7fbaec110305/IDP004.jpeg?format=2500w');background-size:cover;background-position:center top;}
+  .cta-overlay{position:absolute;inset:0;background:rgba(247,244,238,0.91);}
+  .cta-inner{position:relative;z-index:2;max-width:560px;}
+  .cta-label{font-size:9px;font-weight:600;letter-spacing:0.44em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:block;}
+  .cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,60px);font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:18px;letter-spacing:0.04em;}
+  .cta-title em{font-style:italic;color:var(--accent);}
+  .cta-text{font-size:13.5px;font-weight:300;color:var(--warm-gray);line-height:1.9;margin-bottom:12px;letter-spacing:0.02em;}
+  .cta-email{display:inline-block;margin-bottom:40px;font-size:12px;font-weight:400;letter-spacing:0.12em;color:var(--accent);text-decoration:none;}
+  .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{display:inline-block;padding:15px 48px;background:var(--ink);color:var(--ivory);font-size:9px;font-weight:600;letter-spacing:0.38em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .2s;}
+  .btn-primary:hover{background:var(--accent);transform:translateY(-1px);}
+  .btn-secondary{display:inline-block;padding:15px 48px;border:1px solid var(--ink);color:var(--ink);font-size:9px;font-weight:600;letter-spacing:0.38em;text-transform:uppercase;text-decoration:none;transition:all .3s;}
+  .btn-secondary:hover{background:var(--ink);color:var(--ivory);transform:translateY(-1px);}
+  .creds-strip{background:var(--ivory-deep);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:52px 40px;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;}
+  .cred-name{font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:var(--taupe);}
+  footer{background:var(--ink);padding:56px 24px;text-align:center;border-top:1px solid rgba(140,115,85,.18);}
+  .footer-ck{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;letter-spacing:0.32em;text-transform:uppercase;color:rgba(247,244,238,0.35);margin-bottom:6px;}
+  .footer-logo{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;letter-spacing:0.38em;text-transform:uppercase;color:var(--ivory);margin-bottom:8px;}
+  .footer-sub{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(156,148,136,.55);margin-bottom:28px;}
+  .footer-links{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;}
+  .footer-links a{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(156,148,136,.55);text-decoration:none;transition:color .2s;}
+  .footer-links a:hover{color:var(--accent-lt);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+  @media(max-width:860px){
+    .split,.split.rev{grid-template-columns:1fr;direction:ltr;}
+    .split-img{min-height:360px;}.split-text{padding:52px 28px;}
+    .vision-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-strip{grid-template-columns:repeat(2,1fr);height:auto;}.gal-item{height:220px;}
+    .packages-wrap{grid-template-columns:1fr;}
+    .tl-day{grid-template-columns:1fr;gap:16px;padding-left:36px;}
+    .process-steps{grid-template-columns:1fr;}
+    .proc-step{border-right:none;border-bottom:1px solid var(--border-soft);}
+    .proc-step::before{top:0;left:0;right:0;width:100%;}
+    .container{padding:0 20px;}.creds-strip{gap:24px;padding:40px 20px;}
+  }
+  @media(max-width:560px){.vision-grid{grid-template-columns:1fr;}.gallery-strip{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-intro">A Photography Proposal for</div>
+    <div class="hero-names">Christine</div>
+    <div class="hero-ampersand">&amp;</div>
+    <div class="hero-names" style="animation-delay:.45s;">Kelly</div>
+    <div class="hero-ornament"><div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line"></div></div>
+    <p class="hero-venue">Brush Creek Ranch · Wyoming</p>
+    <p class="hero-meta">Three-Day Celebration</p>
+    <p class="hero-byline">Photography by Igor Demba</p>
+  </div>
+</header>
+
+<div class="opening">
+  <div class="opening-inner">
+    <span class="opening-label">A Personal Note</span>
+    <p class="opening-text">"Christine — from the moment you described your vision, I knew exactly what kind of images we would make together. An unconventional love story, a cowboy chapel in Wyoming, two families becoming one. This is the work I live for. I'm honoured to be on your shortlist, and I hope this proposal shows you exactly how I intend to tell your story."</p>
+    <p class="opening-sign">— Igor Demba</p>
+  </div>
+</div>
+
+<section class="split">
+  <div class="split-img">
+    <img src="https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/1389fc6e-d195-41e4-a3bb-d0d02e18e591/IDP002.jpeg?format=2500w" alt="Igor Demba Photography" referrerpolicy="no-referrer">
+  </div>
+  <div class="split-text">
+    <span class="section-label">Your Story</span>
+    <h2 class="section-title">A love story unlike <em>any other</em></h2>
+    <p class="body-text">You told me about the cultural differences, the geography, the age gap. All of it woven into something remarkable, with total clarity about what you want.</p>
+    <p class="body-text" style="margin-top:16px;">Your extensive search tells me you know what you don't like and know exactly what you're looking for. You described you want portraiture, vibrancy, timelessness, authentic moments over poses — this is precisely what I do.</p>
+    <p class="body-text" style="margin-top:16px;">Wyoming is new territory for me. I'm genuinely excited. That sense of discovery always comes through in the images.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <span class="section-label">My Approach</span>
+    <h2 class="section-title">Authentic moments, <em>artistically told</em></h2>
+    <p class="body-text" style="max-width:600px;">You were clear — you want authentic storytelling moments captured with artistry. Here's how will I approach your wedding.</p>
+    <div class="vision-grid">
+      <div class="vision-card"><div class="vision-num">01</div><div class="vision-title">Story First</div><p class="vision-desc">I photograph what is real. Kelly seeing you for the first time. Family & friends reuniting after years of not seeing each other. Those unrepeatable seconds.</p></div>
+      <div class="vision-card"><div class="vision-num">02</div><div class="vision-title">Portraiture</div><p class="vision-desc">You mentioned portraiture specifically. The Friday session at Brush Creek is where we make the images that will define how you remember the beginning of your marriage.</p></div>
+      <div class="vision-card"><div class="vision-num">03</div><div class="vision-title">Spiritual Depth</div><p class="vision-desc">You want purity captured in a traditional light. That sense of ceremony, of something sacred, I know how to honour that with a camera.</p></div>
+      <div class="vision-card"><div class="vision-num">04</div><div class="vision-title">Relaxed Energy</div><p class="vision-desc">Kelly hasn't had many professional photos taken. I'll make it easy. My job is to create a relaxed environment make you both forget I'm there, while missing nothing.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="gallery-strip">
+  <div class="gal-item"><img src="https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/836c4e6f-142f-4b86-86c1-c863442e2386/IDP026.jpeg?format=2500w" alt="" loading="lazy" referrerpolicy="no-referrer"></div>
+  <div class="gal-item"><img src="https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/17be1f44-5141-4993-82e1-923cba545599/A%26T-188.jpg?format=2500w" alt="" loading="lazy" referrerpolicy="no-referrer"></div>
+  <div class="gal-item"><img src="https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/fbb4022f-1fe9-4093-a7f4-42fc1c9e3a2c/S%26A-19.jpg?format=2500w" alt="" loading="lazy" referrerpolicy="no-referrer"></div>
+  <div class="gal-item"><img src="https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/e74940ef-4266-414e-8817-636907bc5e28/IDP016.jpeg?format=2500w" alt="" loading="lazy" referrerpolicy="no-referrer"></div>
+</div>
+
+<hr class="rule">
+
+<section class="section">
+  <div class="container">
+    <span class="section-label">Coverage Plan</span>
+    <h2 class="section-title">Your three days, <em>fully covered</em></h2>
+    <p class="body-text" style="max-width:600px;">Based on our call, here is what I will cover across Thursday, Friday, and Saturday — every moment from arrival through to the reception.</p>
+    <div class="timeline">
+      <div class="tl-day">
+        <div><div class="tl-day-label">Thursday</div><div class="tl-day-sub">Arrival Day</div></div>
+        <div class="tl-items">
+          <div class="tl-item"><div class="tl-item-title">Venue Scout &amp; Arrival Coverage</div><p class="tl-item-desc">I arrive at Brush Creek, scouting light, landscape, and the venue in general ahead of the big day. I'll capture the natural moments of arrival.</p></div>
+          <div class="tl-item"><div class="tl-item-title">Environment &amp; Detail Shots</div><p class="tl-item-desc">The landscape of the Mountain West is extraordinary. I'll spend time with the land itself. The kind of establishing images that give your gallery a true sense of place.</p></div>
+        </div>
+      </div>
+      <div class="tl-day">
+        <div><div class="tl-day-label">Friday</div><div class="tl-day-sub">Portrait Day &amp; Rehearsal</div></div>
+        <div class="tl-items">
+          <div class="tl-item"><div class="tl-item-title">2-Hour Portrait Session (Afternoon)</div><p class="tl-item-desc">This is our golden hour session — just the two of you in the landscape of Brush Creek. The afternoon light in Wyoming will be extraordinary. No pressure, no posing. Just you, Kelly, and the beginning of your marriage being photographed with intention & direction from my part.</p></div>
+          <div class="tl-item"><div class="tl-item-title">2-Hour Rehearsal Dinner Coverage</div><p class="tl-item-desc">The rehearsal dinner is where families truly start to become one. I'll document the warmth, the toasts, the laughter, your friends & family. The real energy before the ceremony.</p></div>
+        </div>
+      </div>
+      <div class="tl-day" style="border-bottom:none;">
+        <div><div class="tl-day-label">Saturday</div><div class="tl-day-sub">Wedding Day</div></div>
+        <div class="tl-items">
+          <div class="tl-item"><div class="tl-item-title">Getting Ready Coverage</div><p class="tl-item-desc">The quiet moments before the ceremony, the anticipation, the details. These are often the most intimate images of the whole day.</p></div>
+          <div class="tl-item"><div class="tl-item-title">Cowboy Chapel Ceremony</div><p class="tl-item-desc">~100 guests. An intimate ceremony. I'll be unobtrusive and present. Capturing every reaction, every tear, and the moment you become husband and wife.</p></div>
+          <div class="tl-item"><div class="tl-item-title">Reception &amp; Celebration</div><p class="tl-item-desc">The families coming together around the table — that's what Kelly is most looking forward to. I'll make sure those moments are documented with the same care as the ceremony. 8 hours total coverage on the day.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gallery-strip">
+  <div class="gal-item"><img src="https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/44725302-606e-4261-98db-7fbaec110305/IDP004.jpeg?format=2500w" alt="" loading="lazy" referrerpolicy="no-referrer"></div>
+  <div class="gal-item"><img src="https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/29410d2a-32be-426f-9acb-3c96e191c250/IDP014.jpeg?format=2500w" alt="" loading="lazy" referrerpolicy="no-referrer"></div>
+  <div class="gal-item"><img src="https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/5df27dbc-b19a-4d71-85b1-8537e3a4419a/IDP001.jpeg?format=2500w" alt="" loading="lazy" referrerpolicy="no-referrer"></div>
+  <div class="gal-item"><img src="https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/26875363-9765-48bc-bae3-9eea694758dd/IDP005.jpeg?format=2500w" alt="" loading="lazy" referrerpolicy="no-referrer"></div>
+</div>
+
+<section class="section" style="background:var(--ivory-deep);">
+  <div class="container">
+    <span class="section-label">Investment</span>
+    <h2 class="section-title">Two options, <em>both built for you</em></h2>
+    <p class="body-text" style="max-width:620px;">I've put together two packages based on our conversation. Both cover all three days in full. The Everything package includes every element I offer — for couples who want all the artistry.</p>
+    <div class="packages-wrap">
+      <div class="pkg featured">
+        <div class="pkg-head">
+          <div class="pkg-badge">Recommended · Three Days</div>
+          <div class="pkg-name">Wyoming Story</div>
+          <div class="pkg-tagline">Full three-day coverage at Brush Creek Ranch</div>
+          <div class="pkg-price"><sup>£</sup>11,000</div>
+          <div class="pkg-price-note">Excludes international travel</div>
+        </div>
+        <div class="pkg-body">
+          <span class="pkg-section-title">Thursday — Arrival</span>
+          <ul class="pkg-features" style="margin-bottom:24px;">
+            <li>Arrival &amp; venue scout coverage</li>
+            <li>Environmental &amp; landscape photography</li>
+            <li>Candid family arrival moments</li>
+          </ul>
+          <span class="pkg-section-title">Friday — Portrait &amp; Rehearsal</span>
+          <ul class="pkg-features" style="margin-bottom:24px;">
+            <li>2-hour couple portrait session</li>
+            <li>2-hour rehearsal dinner coverage</li>
+            <li>Family &amp; guest moments</li>
+          </ul>
+          <span class="pkg-section-title">Saturday — Wedding Day (8 hrs)</span>
+          <ul class="pkg-features" style="margin-bottom:24px;">
+            <li>Getting ready coverage</li>
+            <li>Cowboy Chapel ceremony</li>
+            <li>Family formals &amp; group portraits</li>
+            <li>Reception &amp; dinner</li>
+          </ul>
+          <span class="pkg-section-title">Delivered</span>
+          <ul class="pkg-features">
+            <li>1000+ fully edited images</li>
+            <li>Private online gallery</li>
+            <li>Digital download &amp; print release</li>
+            <li>Story of the Day slideshow</li>
+            <li>Gallery delivered in 6 weeks</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-head">
+          <div class="pkg-badge" style="background:var(--ink);">The Everything Package</div>
+          <div class="pkg-name">Wyoming Complete</div>
+          <div class="pkg-tagline">Every element I offer, nothing left out</div>
+          <div class="pkg-price"><sup>£</sup>15,500</div>
+          <div class="pkg-price-note">Includes all add-ons · Excludes international travel</div>
+        </div>
+        <div class="pkg-body">
+          <span class="pkg-section-title">Everything in Wyoming Story, plus</span>
+          <ul class="pkg-features" style="margin-bottom:24px;">
+            <li>Second professional photographer</li>
+            <li>Roids in the Wild — original Polaroids &amp; instant film, digitised</li>
+            <li>Fine Art Album — 12×12 hand-crafted, panoramic layout, hardback</li>
+            <li>The Box — custom engraved wooden keepsake with USB &amp; fine art prints</li>
+            <li>Priority delivery — gallery within 1 week of the wedding</li>
+            <li>Unlimited coverage Saturday (no clock-watching)</li>
+            <li>Pre-wedding consultation call &amp; full timeline planning</li>
+          </ul>
+          <span class="pkg-section-title">Why Consider This</span>
+          <ul class="pkg-features">
+            <li>A second shooter ensures no moment between us is missed</li>
+            <li>The Polaroids are a tangible piece of the day to hold the same evening</li>
+            <li>The Box becomes a heirloom to share for generations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+      <div>
+        <span class="section-label">Summary</span>
+        <h2 class="section-title">Your <em>investment</em></h2>
+        <table class="inv-table">
+          <tr><td>Wyoming Story Package (3 days)</td><td>£11,000</td></tr>
+          <tr><td>All editing &amp; post-production</td><td>Included</td></tr>
+          <tr class="inv-total"><td>Total — Wyoming Story</td><td>£11,000</td></tr>
+        </table>
+        <p class="body-text" style="margin-top:28px;font-size:12px;color:var(--taupe);">A 50% deposit secures your date. The remaining balance is due 30 days before the wedding. Payment by card or bank transfer.</p>
+      </div>
+      <div style="padding-top:16px;">
+        <img src="https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/86fe3a29-3657-459f-b183-12a456d45c9c/IDP008.jpeg?format=2500w" alt="" loading="lazy" referrerpolicy="no-referrer" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<div class="creds-strip">
+  <span class="cred-name">Harper's BAZAAR</span>
+  <span class="cred-name">Vogue</span>
+  <span class="cred-name">ELLE</span>
+  <span class="cred-name">Condé Nast Traveller</span>
+  <span class="cred-name">Brides</span>
+  <span class="cred-name">Rangefinder Top 30 Rising Star</span>
+</div>
+
+<div class="quote-band">
+  <span class="qb-mark">"</span>
+  <p class="qb-text">Hiring Igor was one of the best decisions we made for our wedding. He is a brilliant, creative, and kind-natured guy. The images are beautiful, intimate, and dreamlike — but with a real cool. He captured so much laughter and love, and the spirit of our day bursts out of his images.</p>
+  <span class="qb-attr">— Kasia &amp; Jon</span>
+</div>
+
+<section class="section">
+  <div class="container">
+    <span class="section-label">Next Steps</span>
+    <h2 class="section-title">How we <em>move forward</em></h2>
+    <div class="process-steps">
+      <div class="proc-step"><div class="proc-num">01</div><div class="proc-title">You Accept</div><p class="proc-desc">Reply to confirm your chosen package. I'll send the contract and deposit invoice. Your date is secured the moment both are received.</p></div>
+      <div class="proc-step"><div class="proc-num">02</div><div class="proc-title">Planning Call</div><p class="proc-desc">We connect with you and Kara 6–8 weeks out to finalise the full timeline, ceremony details, and any other priorities.</p></div>
+      <div class="proc-step"><div class="proc-num">03</div><div class="proc-title">I Arrive Wyoming</div><p class="proc-desc">I arrive at Brush Creek on Thursday or before (TBC) — ready to scout, settle in, and start capturing from the first moment.</p></div>
+      <div class="proc-step"><div class="proc-num">04</div><div class="proc-title">Three Days</div><p class="proc-desc">Thursday arrival, Friday portraits &amp; rehearsal, Saturday the wedding. I stay present and focused across all three days.</p></div>
+      <div class="proc-step"><div class="proc-num">05</div><div class="proc-title">Gallery</div><p class="proc-desc">Expect preview images whilst we are in Wyoming. Your fully edited gallery arrives in your private portal within 6 weeks — or 1 week with The Everything Package.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="split rev" style="border-top:1px solid var(--border-soft);">
+  <div class="split-img">
+    <img src="https://images.squarespace-cdn.com/content/v1/6164971a9996bd558e740f70/1634562137372-5WBZSDAG7NNB6QDSBZ7Q/010.jpg?format=2500w" alt="Kristen & David - Marrakech" loading="lazy" referrerpolicy="no-referrer">
+  </div>
+  <div class="split-text">
+    <span class="section-label">A Reference</span>
+    <h2 class="section-title">Kristen &amp; David — <em>Marrakech</em></h2>
+    <p class="body-text">During our call, I mentioned Kristen and David's wedding in Marrakesh — a destination I'd never worked in before. A couple with a clear vision, an intimate group, an extraordinary location. The images from that day are some of my finest work.</p>
+    <p class="body-text" style="margin-top:16px;">Wyoming feels the same way. New landscape. Extraordinary setting. A couple who know exactly what they want. I can't wait.</p>
+    <p class="body-text" style="margin-top:16px;">I'll send you the link to their full gallery separately — it'll give you the best sense of how I tell a story across a full wedding day.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-inner">
+    <span class="cta-label">Let's Begin</span>
+    <h2 class="cta-title">Christine &amp; Kelly — <em>I'm ready</em></h2>
+    <p class="cta-text">It would be an honour to be part of your three days at Brush Creek. If you have questions before confirming, I'm just a message away — Thank you!</p>
+    <a href="mailto:info@igordemba.com" class="cta-email">info@igordemba.com</a>
+    <div class="cta-buttons">
+      <a href="https://www.igordemba.com/contact" class="btn-primary">Accept This Proposal</a>
+      <a href="https://www.igordemba.com/portfolio" class="btn-secondary">View Full Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-ck">Christine &amp; Kelly · Wyoming 2026</div>
+  <div class="footer-logo">Igor Demba</div>
+  <div class="footer-sub">Destination Wedding Photography · London · Worldwide</div>
+  <nav class="footer-links">
+    <a href="https://www.igordemba.com">Website</a>
+    <a href="https://www.igordemba.com/portfolio">Portfolio</a>
+    <a href="https://www.igordemba.com/about-destination-wedding-photographer">About</a>
+    <a href="https://www.igordemba.com/contact">Contact</a>
+  </nav>
+</footer>
+</body>
+</html>
